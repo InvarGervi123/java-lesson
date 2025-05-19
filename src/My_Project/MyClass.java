@@ -239,9 +239,9 @@ public class MyClass
 //		System.out.print(chartostring(arr));
 //		int[] num = {1,2,3,4,5};
 //		System.out.print(sumnum(num));
-		int[] arr = {1,2,3,4,5,6};
-		int num = 3;
-		System.out.print(howmanyarrays(arr,num));
+//		int[] arr = {1,2,3,4,5,6};
+//		int num = 3;
+//		System.out.print(howmanyarrays(arr,num));
 	}
 	public static int howmanyarrays(int[] arr,int num)
 	{
