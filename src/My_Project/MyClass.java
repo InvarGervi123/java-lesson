@@ -242,6 +242,64 @@ public class MyClass
 //		int[] arr = {1,2,3,4,5,6};
 //		int num = 3;
 //		System.out.print(howmanyarrays(arr,num));
+//		System.out.print(string1("fds123"));
+//		System.out.print(string2("ASD"));
+		System.out.print(string3("ABCD",4321));
+	}
+	public static String string3(String words,int num)
+	{
+		int sum =0;
+		int end =0;
+		String endwords ="";
+		while (num>0)
+		{
+			sum = sum * 10 + num%10;
+			num = num/10;
+
+		}
+		for (int i =0;i<words.length();i++)
+		{
+			if (sum>0)
+			{
+				end = sum%10;
+				sum=sum/10;
+				for (int j = 0;j<end;j++)
+				{
+					endwords = endwords + words.charAt(i);
+				}
+					
+			}
+		}
+		return endwords;
+	}
+	public static boolean string2(String words)
+	{
+		if (words.equals(words.toUpperCase()) || words.equals(words.toLowerCase()))
+		{
+			return true;
+		}
+		return false;
+	}
+	public static boolean string1(String words)
+	{
+		boolean checklow = false;
+		boolean checkhigh = false;
+		for (int i =0;i<words.length();i++)
+		{
+			if ((words.charAt(i) >= 'A' && words.charAt(i) <= 'Z'))
+			{
+				checkhigh = true;
+			}
+			if (words.charAt(i) >= 'a' && words.charAt(i) <= 'z')
+			{
+				checklow = true;
+			}
+		}
+		if (checklow == checkhigh)
+		{
+			return false;
+		}
+		return true;
 	}
 	public static int howmanyarrays(int[] arr,int num)
 	{
