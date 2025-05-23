@@ -244,7 +244,89 @@ public class MyClass
 //		System.out.print(howmanyarrays(arr,num));
 //		System.out.print(string1("fds123"));
 //		System.out.print(string2("ASD"));
-		System.out.print(string3("ABCD",4321));
+//		System.out.print(string3("ABCD",4321));
+//		System.out.print(String4("FDGSGSGT#"));
+//		System.out.print(String5("ABCDEFG",4));
+		String[] words = {"A","AB","CAB","CABS"};
+		System.out.print(String6(words));
+	}
+	public static boolean String6(String[] words)
+	{
+        for(int i=1;i<words.length;i++)
+        {
+        	if(words[i].indexOf(words[i-1])==-1)
+        	{
+        		return false;
+        	}
+        }
+        return true;
+//		String next = "";
+//		char word;
+//		int count =0;
+//		for (int i=0;i<next.length();i++)
+//		{
+//			next = words[i];
+//			for (int k=0;k<words.length;k++)
+//			{
+//				word = next.charAt(k);
+//				if(word == words[k].charAt(k))
+//				{
+//					count++;
+//				}
+//			}
+//		}
+//		if(count==words.length)
+//		{
+//			return true;			
+//		}
+//		return false;
+	}
+	public static String String5(String words,int num)
+	{
+		String namestart = words.substring(0,num);
+		String nameend = words.substring(num,words.length());
+		String fullname = nameend + namestart;
+		return fullname;
+	}
+	public static boolean String4(String words)
+	{
+		if (words.length()<8)
+		{
+			return false;
+		}
+		boolean checklow = false;
+		boolean checkhigh = false;
+		boolean numberswords = false;
+		boolean numbers = false;
+		for (int i =0;i<words.length();i++)
+		{
+			if ((words.charAt(i) >= 'A' && words.charAt(i) <= 'Z'))
+			{
+				checkhigh = true;
+			}
+			if (words.charAt(i) >= 'a' && words.charAt(i) <= 'z')
+			{
+				checklow = true;
+			}
+			if (words.charAt(i) >= '!' && words.charAt(i) <= '&')
+			{
+				numberswords = true;
+			}
+			if (words.charAt(i) >= '0' && words.charAt(i) <= '9')
+			{
+				numbers = true;
+			}
+		}
+		if ((checklow != checkhigh) && (numberswords) && !(numbers))
+		{
+			return true;
+		}
+		if (checkhigh && checklow && numbers)
+		{
+			return true;
+		}
+		return false;
+		
 	}
 	public static String string3(String words,int num)
 	{
